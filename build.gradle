@@ -232,7 +232,7 @@ subprojects {
     protobufVersion = '4.29.3'
     springVersion = '6.2.2'
     springSecurityVersion = '6.4.2'
-    elasticSearchClientVersion = '7.17.27'
+    elasticSearchClientVersion = '7.17.28'
   }
 
   sonar {
@@ -275,6 +275,13 @@ subprojects {
       // do not conflict with com.sun.mail:javax.mail
       exclude group: 'javax.mail', module: 'mail'
     }
+  }
+
+  // force json-smart to 2.5.2, replace mysql-jdbc dependency
+  configurations.all {
+      resolutionStrategy {
+          force('net.minidev:json-smart:2.5.2')
+      }
   }
 
   // Central place for definition dependency versions and exclusions.
@@ -411,7 +418,7 @@ subprojects {
         entry 'jjwt-jackson'
       }
       dependency 'com.auth0:java-jwt:4.4.0'
-      dependency 'io.netty:netty-all:4.1.117.Final'
+      dependency 'io.netty:netty-all:4.1.118.Final'
       dependency 'jakarta.mail:jakarta.mail-api:2.1.3'
       dependency 'jakarta.annotation:jakarta.annotation-api:3.0.0'
       dependency 'jakarta.inject:jakarta.inject-api:2.0.1'
