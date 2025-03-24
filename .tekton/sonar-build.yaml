@@ -28,7 +28,12 @@ spec:
     - name: git-commit
       value: "{{ revision }}"
     - name: extra-args
-      value: "--no-daemon -q --console=plain -x test"
+      value: "--no-daemon -q --console=plain -x test -DbuildNumber=100197"
+    - name: tasks
+      value:
+      - clean
+      - build
+      - publish
   workspaces:
     - name: source
       volumeClaimTemplate:
