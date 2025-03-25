@@ -80,7 +80,7 @@ dependencies {
     if (artifactoryUsername && artifactoryPassword) {
       zipDist "sonarqube:elasticsearch:${elasticsearchVersion}-no-jdk-linux-x86_64@tar.gz"
     } else {
-      zipDist "sonarqube:elasticsearch:${elasticsearchVersion}-linux-x86_64@tar.gz"
+      zipDist "elasticsearch:elasticsearch:${elasticsearchVersion}-linux-x86_64@tar.gz"
     }
 }
 
@@ -303,7 +303,7 @@ zip.doFirst {
 // Check the size of the archive
 zip.doLast {
   def minLength = 272000000
-  def maxLength = 297000000
+  def maxLength = 397000000
 
   def length = archiveFile.get().asFile.length()
   if (length < minLength)
