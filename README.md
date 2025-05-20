@@ -18,6 +18,7 @@ Links
 * [Next](https://next.sonarqube.com/sonarqube) instance of the next SonarQube version
 
 Have Question or Feedback?
+
 --------------------------
 
 For support questions ("How do I?", "I got this error, why?", ...), please first read the [documentation](https://docs.sonarqube.org) and then head to the [SonarSource Community](https://community.sonarsource.com/c/help/sq/10). The answer to your question has likely already been answered! 🤓
