@@ -2550,6 +2550,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/trusted-types@npm:^2.0.7":
+  version: 2.0.7
+  resolution: "@types/trusted-types@npm:2.0.7"
+  checksum: 8e4202766a65877efcf5d5a41b7dd458480b36195e580a3b1085ad21e948bc417d55d6f8af1fd2a7ad008015d4117d5fdfe432731157da3c68678487174e4ba3
+  languageName: node
+  linkType: hard
+
 "@types/valid-url@npm:1.0.3":
   version: 1.0.3
   resolution: "@types/valid-url@npm:1.0.3"
@@ -2875,7 +2882,7 @@ __metadata:
     d3-zoom: 3.0.0
     date-fns: 2.29.3
     diff: 5.1.0
-    dompurify: 2.5.4
+    dompurify: 3.2.4
     enzyme: 3.11.0
     enzyme-adapter-react-16: 1.15.7
     enzyme-to-json: 3.6.2
@@ -4546,10 +4553,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:2.5.4":
-  version: 2.5.4
-  resolution: "dompurify@npm:2.5.4"
-  checksum: 1b40b7b1c5466ad68841b0743c871987167052a67411d2d25f31741a7961c651acc54d6cc45480afb01e0ff084870699a25217d5f2d4da3c53ca8c92ab430450
+"dompurify@npm:3.2.4":
+  version: 3.2.4
+  resolution: "dompurify@npm:3.2.4"
+  dependencies:
+    "@types/trusted-types": ^2.0.7
+  dependenciesMeta:
+    "@types/trusted-types":
+      optional: true
+  checksum: 7a299cbbfe3b3d189e5fc77ab94ad312807e37fda1e24a927548b76a58a9c98137e612ce8d94a2f6cd3d3db59844f14fca477676b5eae6103568a82142771df6
   languageName: node
   linkType: hard
 
