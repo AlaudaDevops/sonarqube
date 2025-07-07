@@ -6,13 +6,13 @@ plugins {
   // Ordered alphabetically
   id 'com.github.hierynomus.license' version '0.16.1'
   id "com.github.hierynomus.license-report" version "0.16.1" apply false
-  id 'com.github.johnrengelman.shadow' version '7.1.2' apply false
+  id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
   id 'com.google.protobuf' version '0.8.19' apply false
   id 'com.jfrog.artifactory' version '5.2.5'
   id "de.undercouch.download" version "5.6.0" apply false
   id 'io.spring.dependency-management' version '1.1.6'
-  id "org.cyclonedx.bom" version "1.6.1" apply false
-  id 'org.sonarqube' version '3.5.0.2730'
+  id "org.cyclonedx.bom" version "2.3.1" apply false
+  id 'org.sonarqube' version '6.2.0.5505'
 }
 
 if (!JavaVersion.current().isCompatibleWith(VERSION_17)) {
@@ -204,7 +204,7 @@ subprojects {
   }
 
   ext {
-    protobufVersion = '3.25.5'
+    protobufVersion = '4.31.1'
   }
 
   sonar {
@@ -250,7 +250,7 @@ subprojects {
       dependency 'org.sonarsource.kotlin:sonar-kotlin-plugin:2.12.0.1956'
       dependency 'org.sonarsource.slang:sonar-ruby-plugin:1.18.0.234'
       dependency 'org.sonarsource.slang:sonar-scala-plugin:1.11.0.3905'
-      dependency 'org.sonarsource.api.plugin:sonar-plugin-api:9.14.0.375'
+      dependency 'org.sonarsource.api.plugin:sonar-plugin-api:13.0.0.3026'
       dependency 'org.sonarsource.xml:sonar-xml-plugin:2.7.0.3820'
       dependency 'org.sonarsource.iac:sonar-iac-plugin:1.22.0.7057'
       dependency 'org.sonarsource.text:sonar-text-plugin:2.0.2.1090'
@@ -287,7 +287,7 @@ subprojects {
       dependency 'io.prometheus:simpleclient_servlet:0.16.0'
       dependency 'com.google.code.findbugs:jsr305:3.0.2'
       dependency 'com.google.code.gson:gson:2.10'
-      dependency('com.google.guava:guava:31.1-jre') {
+      dependency('com.google.guava:guava:33.4.8-jre') {
         exclude 'com.google.errorprone:error_prone_annotations'
         exclude 'com.google.guava:listenablefuture'
         exclude 'com.google.j2objc:j2objc-annotations'
@@ -300,19 +300,19 @@ subprojects {
         entry 'hazelcast'
       }
       // Documentation must be updated if mssql-jdbc is updated: https://github.com/SonarSource/sonarqube/commit/03e4773ebf6cba854cdcf57a600095f65f4f53e7
-      dependency('com.microsoft.sqlserver:mssql-jdbc:11.2.2.jre17') {
+      dependency('com.microsoft.sqlserver:mssql-jdbc:12.10.1.jre11') {
         exclude 'com.fasterxml.jackson.core:jackson-databind'
       }
       dependency 'com.onelogin:java-saml:2.9.0'
-      dependency 'com.oracle.database.jdbc:ojdbc11:21.8.0.0'
+      dependency 'com.oracle.database.jdbc:ojdbc11:23.8.0.25.04'
       dependency 'com.squareup.okio:okio:3.4.0'
       dependency 'org.aspectj:aspectjtools:1.9.9.1'
       // If this gets updated the dependency on okio 3.4.0 should be reviewed
-      dependencySet(group: 'com.squareup.okhttp3', version: '4.10.0') {
+      dependencySet(group: 'com.squareup.okhttp3', version: '5.0.0') {
         entry 'okhttp'
         entry 'mockwebserver'
       }
-      dependency 'org.json:json:20231013'
+      dependency 'org.json:json:20250517'
       dependency 'com.tngtech.java:junit-dataprovider:1.13.1'
       dependencySet(group: 'io.jsonwebtoken', version: '0.11.5') {
         entry 'jjwt-api'
@@ -334,7 +334,7 @@ subprojects {
       dependency 'org.awaitility:awaitility:4.2.0'
       dependency 'org.apache.commons:commons-csv:1.9.0'
       dependency 'org.apache.commons:commons-email:1.5'
-      dependency 'com.zaxxer:HikariCP:5.0.1'
+      dependency 'com.zaxxer:HikariCP:6.3.0'
       dependency('org.apache.httpcomponents:httpclient:4.5.14') {
         exclude 'commons-logging:commons-logging'
       }
@@ -344,7 +344,7 @@ subprojects {
         entry 'log4j-api'
         entry 'log4j-to-slf4j'
       }
-      dependencySet(group: 'org.apache.tomcat.embed', version: '9.0.95') {
+      dependencySet(group: 'org.apache.tomcat.embed', version: '11.0.9') {
         entry 'tomcat-embed-core'
         entry('tomcat-embed-jasper') {
           exclude 'org.eclipse.jdt.core.compiler:ecj'
@@ -359,7 +359,7 @@ subprojects {
       }
       dependency 'org.codehaus.sonar:sonar-classloader:1.0'
       dependency 'com.fasterxml.staxmate:staxmate:2.4.0'
-      dependencySet(group: 'org.eclipse.jetty', version: '9.4.6.v20170531') {
+      dependencySet(group: 'org.eclipse.jetty', version: '12.0.23') {
         entry 'jetty-proxy'
         entry 'jetty-server'
         entry 'jetty-servlet'
@@ -370,20 +370,20 @@ subprojects {
       }
       dependency 'org.elasticsearch.plugin:transport-netty4-client:7.17.24'
       dependency 'org.elasticsearch:mocksocket:1.2'
-      dependency 'org.codelibs.elasticsearch.module:analysis-common:7.17.1'
-      dependency 'org.codelibs.elasticsearch.module:reindex:7.17.1'
-      dependency 'org.eclipse.jgit:org.eclipse.jgit:6.6.1.202309021850-r'
+      dependency 'org.codelibs.elasticsearch.module:analysis-common:8.14.3'
+      dependency 'org.codelibs.elasticsearch.module:reindex:8.14.3'
+      dependency 'org.eclipse.jgit:org.eclipse.jgit:7.3.0.202506031305-r'
       dependency 'org.tmatesoft.svnkit:svnkit:1.10.9'
       dependency 'org.hamcrest:hamcrest-all:1.3'
       dependency 'org.jsoup:jsoup:1.15.3'
       dependency 'org.mindrot:jbcrypt:0.4'
-      dependency('org.mockito:mockito-core:4.10.0') {
+      dependency('org.mockito:mockito-core:5.18.0') {
         exclude 'org.hamcrest:hamcrest-core'
       }
-      dependency('org.mockito:mockito-inline:4.10.0')
+      dependency('org.mockito:mockito-inline:5.2.0')
       dependency 'org.mybatis:mybatis:3.5.11'
       dependency 'org.nanohttpd:nanohttpd:2.3.1'
-      dependencySet(group: 'org.slf4j', version: '1.7.36') {
+      dependencySet(group: 'org.slf4j', version: '2.0.17') {
         entry 'jcl-over-slf4j'
         entry 'jul-to-slf4j'
         entry 'log4j-over-slf4j'
@@ -392,9 +392,9 @@ subprojects {
       dependency 'org.postgresql:postgresql:42.7.5'
       dependency 'org.reflections:reflections:0.10.2'
       dependency 'org.simpleframework:simple:5.1.6'
-      dependency 'org.sonarsource.orchestrator:sonar-orchestrator-junit4:4.5.0.1700'
+      dependency 'org.sonarsource.orchestrator:sonar-orchestrator-junit4:5.6.2.2625'
       dependency 'org.sonarsource.update-center:sonar-update-center-common:1.29.0.1000'
-      dependency('org.springframework:spring-context:5.3.27') {
+      dependency('org.springframework:spring-context:6.2.8') {
         exclude 'commons-logging:commons-logging'
       }
       dependency 'org.subethamail:subethasmtp:3.1.7'
