@@ -99,5 +99,15 @@
       "enabled": true,
       "groupName": "Major Frontend Dependencies"
     }
+  ],
+  "osvVulnerabilityAlerts": true,
+  "vulnerabilityAlerts": {
+    "vulnerabilityFixStrategy": "lowest",
+    "labels": ["security"],
+    "automerge": true,
+    "assignees": ["@kycheng"]
+  },
+  "baseBranches": [
+    "/^release-.*/"
   ]
 }
