@@ -1,6 +1,6 @@
 {
   "extends": [
-    "config:base",
+    "config:recommended",
     ":preserveSemverRanges"
   ],
   "branchConcurrentLimit": 0,
@@ -11,7 +11,6 @@
   "ignoreDeps": [
     "org.ajoberstar.grgit",
     "com.bmuschko.docker-remote-api",
-    
     "com.sonarsource.abap:sonar-abap-plugin",
     "com.sonarsource.cobol:sonar-cobol-plugin",
     "com.sonarsource.cpp:sonar-cfamily-plugin",
@@ -103,9 +102,13 @@
   "osvVulnerabilityAlerts": true,
   "vulnerabilityAlerts": {
     "vulnerabilityFixStrategy": "lowest",
-    "labels": ["security"],
+    "labels": [
+      "security"
+    ],
     "automerge": true,
-    "assignees": ["@kycheng"]
+    "assignees": [
+      "@kycheng"
+    ]
   },
   "baseBranches": [
     "/^alauda-.*/"
